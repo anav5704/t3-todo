@@ -11,7 +11,7 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model Note {
+model Todo {
   id      String  @id @default(uuid())
   content String
   done    Boolean @default(false)
