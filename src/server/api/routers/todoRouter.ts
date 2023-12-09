@@ -1,5 +1,6 @@
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { z } from "zod";
+import { Input } from "postcss";
 
 export const todoRouter = createTRPCRouter({
     addTodo: publicProcedure
@@ -22,5 +23,22 @@ export const todoRouter = createTRPCRouter({
         .query(async ({ ctx }) => {
             const todos = await ctx.db.todo.findMany()
             return todos
-        })
+        }),
+
+    deleteTodo: publicProcedure
+        .input(z.object({
+            id: z.string()
+        }))
+        .mutation(async ({ ctx, input }) => {
+            const { id } = input
+
+            const todo = await ctx.db.todo.delete({
+                where: {
+                    id
+                }
+            })
+
+            return todo
+        }),
+
 })
