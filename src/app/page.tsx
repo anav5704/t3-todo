@@ -15,11 +15,7 @@ export default function Home() {
             setTodos((todos) => todos.filter((todo) => todo.id !== deletedTodo.id))
         }
     })
-    const { mutate: toggleTodo } = api.todo.toggleTodo.useMutation({
-        onSuccess(togggledTodo) {
-
-        }
-    })
+    const { mutate: toggleTodo } = api.todo.toggleTodo.useMutation()  
 
     useEffect(() => {
         data && setTodos(data)
