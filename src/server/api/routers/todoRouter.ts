@@ -8,7 +8,7 @@ export const todoRouter = createTRPCRouter({
         }))
         .mutation(async ({ ctx, input }) => {
             const { content } = input
-            
+
             const todo = await ctx.db.todo.create({
                 data: {
                     content
@@ -16,5 +16,11 @@ export const todoRouter = createTRPCRouter({
             })
 
             return todo
+        }),
+
+    getTodos: publicProcedure
+        .query(async ({ ctx }) => {
+            const todos = await ctx.db.todo.findMany()
+            return todos
         })
 })
