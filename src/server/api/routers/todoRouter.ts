@@ -41,4 +41,23 @@ export const todoRouter = createTRPCRouter({
             return todo
         }),
 
+    toggleTodo: publicProcedure
+        .input(z.object({
+            id: z.string(),
+            done: z.boolean()
+        }))
+        .mutation(async ({ ctx, input }) => {
+            const { id, done } = input
+
+            const todo = ctx.db.todo.update({
+                where: {
+                    id
+                },
+                data: {
+                    done
+                }
+            })
+
+            return todo
+        })
 })
