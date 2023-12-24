@@ -2,7 +2,7 @@
 
 ![hero page](https://github.com/anav5704/t3-todo/blob/main/docs/t3-todo.png)
 
-This is a simple, and my second ever todo app made wiith the legendary T3 stack. Had lots of fun working with tRPC. It's super easy and simple to use. Don't we all love abstraction layers on top of other abstraction layers.
+This is a simple, and my second-ever todo app made with the legendary T3 stack. Had lots of fun working with tRPC. It's super easy and simple to use. Don't we all love abstraction layers on top of other abstraction layers?
 
 ## Technologies Used
 - Next JS 14
@@ -26,7 +26,7 @@ Once that is done, run ```npm run dev``` to view it on localhost.
 
 - [T3 stack YouTube clone](https://www.youtube.com/watch?v=TV6tFPfz0go)
 - [T3 stack tutorial](https://www.youtube.com/watch?v=YkOSUVzOAA4)
-- [T3 docs](https://create.t3.gg/)]
+- [T3 docs](https://create.t3.gg/)
 
 
 
